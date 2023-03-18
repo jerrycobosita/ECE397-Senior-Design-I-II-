@@ -1,0 +1,28 @@
+#include <Stepper.h>
+
+const int stepsPerRevolution = 200;  // change this to fit the number of steps per revolution
+// for your motor
+int alarm = 0;
+int pillRevolution = 50;
+// initialize the stepper library on pins 8 through 11:
+Stepper myStepper(stepsPerRevolution, 45, 47, 49, 51);
+
+void setup() {
+  // set the speed at 10 rpm:
+  Serial.begin(9600);
+  myStepper.setSpeed(10);  
+  // initialize the serial port:
+  
+}
+
+void loop() {
+  // step one revolution  in one direction:
+  //if(alarm == 0){
+    Serial.println("clockwise");
+    myStepper.step(pillRevolution);
+    delay(2000);
+  //}
+  //alarm = 1;
+  
+  
+}
